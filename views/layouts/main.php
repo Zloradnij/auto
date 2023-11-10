@@ -45,8 +45,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             ['label' => 'Report', 'url' => ['/library/report']],
             ['label' => 'Books', 'url' => [Url::toRoute(['/library/book'])]],
             !Yii::$app->user->isGuest ? ['label' => 'Authors', 'url' => [Url::toRoute(['/library/author'])]] : '',
+            Yii::$app->user->isGuest ? ['label' => 'Signup', 'url' => [Url::toRoute(['/site/signup'])]] : '',
             Yii::$app->user->isGuest
-                ? ['label' => 'Login', 'url' => ['/site/login']]
+                ? ['label' => 'Logins', 'url' => ['/site/login']]
                 : '<li class="nav-item">'
                     . Html::beginForm(['/site/logout'])
                     . Html::submitButton(
